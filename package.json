@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/devugees/cocktails-bootstrap#readme",
   "devDependencies": {
-    "gulp-livereload": "^3.8.1"
+    "browser-sync": "^2.18.12",
+    "gulp": "^3.9.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-sass": "^3.1.0"
   }
 }
