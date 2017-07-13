@@ -11,4 +11,13 @@
 li {
   text-align: left;
  
+
+.space-top {
+	margin-top: 50px;
+}
+
+.footer {
+	background: #eee;
+	padding-top: 50px;
+	padding-bottom: 50px;
 }
