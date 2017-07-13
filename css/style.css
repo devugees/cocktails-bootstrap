@@ -1,3 +1,46 @@
 .carousel-inner img {
   object-fit: fill;
 }
+.main {
+   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+   padding: 0px;
+}
+.navbar {
+  border-radius: 0px;
+}
+.logo {
+  margin-bottom: 2%;
+}
+#logo {
+  display: block;
+  width:256px;
+  height: 256px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.logoText h2 {
+  text-align: center;
+}
+.search-bar {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.input-group span {
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+
+}
+.input-group {
+   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+   border-radius: 4px;
+}
+.input-group span button {
+  background-color: black;
+  border-radius: 2px;
+}
+.input-group input {
+  border: none;
+
+}
