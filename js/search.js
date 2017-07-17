@@ -29,7 +29,6 @@ $(document).ready(function() {
               third: response.drinks[i].strIngredient3,
               fourth: response.drinks[i].strIngredient4,
             }
-
           }
           var props = "<li>" + result.id + "</li><li>" + result.date + "</li><li>" + result.category + "</li>";
           var ings = "<li>" + result.ingredients.first + "</li><li>" + result.ingredients.second+ "</li><li>" + result.ingredients.third + "</li><li>" + result.ingredients.fourth + "</li>"
@@ -44,7 +43,6 @@ $(document).ready(function() {
           resultELement.find('#ingredients').append(ings);
           resultELement.find('.instructions').text(result.instructions);
           $resultList.append(resultELement);
-
 
         }
 
