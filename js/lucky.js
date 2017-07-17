@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('#searchButton').on('click', function() {
+  $('.lucky').on('click', function() {
     $('#resultList').html("");
     var keyword = $('.form-control').val();
     var template;
@@ -10,9 +10,7 @@ $(document).ready(function() {
         return template;
       }
     });
-    $.getJSON('http://www.thecocktaildb.com/api/json/v1/1/search.php?', {
-        s: keyword
-      })
+    $.getJSON('http://www.thecocktaildb.com/api/json/v1/1/random.php',)
       .done(function(response) {
         console.log(response);
         for (var i = 0; i < 7; i++) {
@@ -43,7 +41,7 @@ $(document).ready(function() {
           resultELement.find('#ingredients').append(ings);
           resultELement.find('.instructions').text(result.instructions);
           $resultList.append(resultELement);
-    
+
         }
 
 
