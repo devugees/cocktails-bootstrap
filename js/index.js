@@ -12,4 +12,10 @@ $(document).ready(function() {
   $(function(){
     $("#featuresContainer").load("features.html");
   });
+  $(function(){
+    $("#accordionContainer").load("accordion.html");
+  });
+  $(function(){
+    $("#contactsContainer").load("contacts.html");
+  });
 });
