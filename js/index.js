@@ -1,11 +1,15 @@
+
 $(document).ready(function() {
   $(function(){
-    $("#searchContainer").load("search.html"); 
+    $("#navContainer").load("nav.html");
   });
   $(function(){
-    $("#sliderContainer").load("slider.html"); 
+    $("#searchContainer").load("search.html");
   });
   $(function(){
-    $("#featuresContainer").load("features.html"); 
+    $("#sliderContainer").load("slider.html");
+  });
+  $(function(){
+    $("#featuresContainer").load("features.html");
   });
 });
