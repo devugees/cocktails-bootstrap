@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('#searchButton').on('click', function() {
+  function getData(url , count) {
     $('#resultList').html("");
     var keyword = $('.form-control').val();
     var template;
@@ -10,12 +10,12 @@ $(document).ready(function() {
         return template;
       }
     });
-    $.getJSON('http://www.thecocktaildb.com/api/json/v1/1/search.php?', {
+    $.getJSON(url, {
         s: keyword
       })
       .done(function(response) {
         console.log(response);
-        for (var i = 0; i < 7; i++) {
+        for (var i = 0; i < count; i++) {
           var result = {
             name: response.drinks[i].strDrink,
             thumbnail: response.drinks[i].strDrinkThumb,
@@ -78,8 +78,15 @@ $(document).ready(function() {
           resultELement.find('.instructions').text(result.instructions);
           $resultList.append(resultELement);
         }
-
-
       });
+  }
+  $(document).on('click',"#searchButton", function(e) {
+    e.preventDefault();
+    getData('http://www.thecocktaildb.com/api/json/v1/1/search.php?s=',5);
+
+  });
+  $(document).on('click',".lucky", function(e) {
+    e.preventDefault();
+    getData('http://www.thecocktaildb.com/api/json/v1/1/random.php',1);
   });
 });
