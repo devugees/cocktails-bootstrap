@@ -58,3 +58,13 @@
   background-color: black;
   color:white;
 }
+.position-absolute {
+  position:absolute;
+
+}
+.z-index10 {
+  z-index: 10;
+}
+.margin-top {
+  margin-top: 100px;
+}
