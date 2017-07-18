@@ -1,5 +1,6 @@
 .carousel-inner img {
   object-fit: fill;
+
 }
 
 .main {
@@ -103,4 +104,12 @@
   .pull-right-md{
   float:right!important;
   }
+}
+.img-responsive {
+   box-shadow: 10px 10px 10px #888888;
+   margin-bottom: 10px;
+}
+ul {
+  font-size: 15px;
+  font-family: 'Merriweather', serif;
 }
