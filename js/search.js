@@ -82,7 +82,7 @@ $(document).ready(function() {
   }
   $(document).on('click',"#searchButton", function(e) {
     e.preventDefault();
-    getData('http://www.thecocktaildb.com/api/json/v1/1/search.php?s=',5);
+    getData('http://www.thecocktaildb.com/api/json/v1/1/search.php',5);
 
   });
   $(document).on('click',".lucky", function(e) {

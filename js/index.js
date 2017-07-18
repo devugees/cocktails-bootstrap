@@ -25,6 +25,8 @@ $(document).ready(function() {
   $('html, body').stop().animate({
     scrollTop: ($($ele.attr('href')).offset().top - 60)
   }, 600);
+  $('#bs-example-navbar-collapse-1 li').removeClass('active');
+  $(this).parent().addClass('active');
   event.preventDefault();
 });
 
