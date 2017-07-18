@@ -1,0 +1,24 @@
+#popularContainer a:hover{
+  text-decoration: none;
+}
+.center_popular{
+ text-align: center;
+ margin-bottom: 30px;
+}
+.caption2{
+margin-top: -100px;
+}
+.row_popular{
+  margin-top: 100px;
+
+}
+.thumbail_update{
+opacity: 1;
+box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+}
+.thumbail_update:hover{
+  opacity: 0.5;
+
+
+}

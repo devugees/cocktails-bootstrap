@@ -13,7 +13,7 @@ $(document).ready(function() {
     $("#featuresContainer").load("features.html");
   });
   $(function(){
-    $("#accordionContainer").load("accordion.html");
+    $("#popularContainer").load("popular.html");
   });
   $(function(){
     $("#contactsContainer").load("contacts.html");
