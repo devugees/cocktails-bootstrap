@@ -1,6 +1,10 @@
 #popularContainer a:hover{
   text-decoration: none;
 }
+#popularContainer a:visited{
+  text-decoration: none;
+}
+
 .center_popular{
  text-align: center;
  margin-bottom: 30px;
