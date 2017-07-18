@@ -7,6 +7,11 @@
 }
 .navbar {
   border-radius: 0px;
+  position: absolute;
+  width: 100%;
+}
+.navbar.navbar-fixed-top {
+  position: fixed;
 }
 .logo {
   margin-bottom: 2%;
@@ -60,6 +65,10 @@
 }
 .position-absolute {
   position:absolute;
+
+}
+.position-relative {
+  position:relative;
 
 }
 .z-index10 {
