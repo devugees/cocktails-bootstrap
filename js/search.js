@@ -99,7 +99,9 @@ $(document).ready(function() {
           resultELement.find('h3').text(result.name);
           resultELement.find('.instructions').text(result.instructions);
           resultELement.find('li').addClass('list-group-item');
+          $resultList.removeClass('hidden');
           resultELement.fadeIn(1000).removeClass('hidden');
+
           $resultList.append(resultELement);
         }
       });
