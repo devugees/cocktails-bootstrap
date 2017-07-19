@@ -10,10 +10,10 @@ $(document).ready(function() {
     $("#sliderContainer").load("slider.html");
   });
   $(function(){
-    $("#featuresContainer").load("features.html");
+    //$("#featuresContainer").load("features.html");
   });
   $(function(){
-    $("#accordionContainer").load("accordion.html");
+  $("#popularContainer").load("popular.html");
   });
   $(function(){
     $("#contactsContainer").load("contacts.html");
