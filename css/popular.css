@@ -17,12 +17,21 @@ margin-top: -100px;
 
 }
 .thumbail_update{
-opacity: 1;
-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-
+transition: box-shadow 0.5s;
 }
 .thumbail_update:hover{
-  opacity: 0.5;
-
+ box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+ .thumbnail input {
+   position: relative;
+   left:40px;
+ }
+ .rating-symbol {
+    font-size: 20px;
+}
+.thumbnail>span{
+  display: block;
+  text-align: center;
+margin-top: 15px;
 
 }
