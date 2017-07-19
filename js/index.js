@@ -3,7 +3,6 @@ $(document).ready(function() {
   $("#navContainer").load("nav.html");
   $("#searchContainer").load("search.html");
   $("#sliderContainer").load("slider.html");
-  $("#contactsContainer").load("contacts.html");
 
   $(document).on('click', 'a.page-scroll', function(event) {
     var $ele = $(this);
