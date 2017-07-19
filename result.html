@@ -1,28 +1,70 @@
-
-<li class="media">
-<div class="media-body">
-  <h2 class="mt-0 mb-1" id="cocktailName"></h2>
-  <hr>
+<div class="col-md-3">
+  <div class="card">
     <div class="row">
-      <div class="col-md-2">
-        <img class="img-responsive" alt="Generic placeholder image" id="cocktailIamge">
-      </div>
-      <div class="col-md-2">
-        <ul class="list-unstyled" id="properties">
-          <li><strong>Properties:</strong></li>
-        </ul>
-      </div>
-      <div class="col-md-2">
-        <ul class="list-unstyled" id="ingredients">
-          <li><strong>Ingredients:</strong></li>
-        </ul>
-      </div>
-      <div class="col-md-6">
-    <strong> How To :</strong>
-        <p class="instructions">
-        </p>
+      <div class="col-md-12">
+    <img class="card-img-top img-fluid" src="..." alt="Card image cap" id="cocktailIamge">
+    </div>
+    </div>
+    <div class="card-block">
+      <h3 class="card-title text-center" id="cocktailName">Card title</h3>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Properties:
+                </a>
+              </h4>
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                  <ul class="list-group" id="properties">
+
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingTwo">
+                <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false"
+                  aria-controls="collapseTwo">
+                  Ingredients:
+                </a>
+              </h4>
+              </div>
+              <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="panel-body">
+                  <ul class="list-group" id="ingredients">
+                    <li><strong>Ingredients</strong></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingThree">
+                <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false"
+                  aria-controls="collapseThree">
+                   How To :
+                </a>
+              </h4>
+              </div>
+              <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="panel-body">
+                  <strong> How To :</strong>
+                  <p class="instructions">
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
 </div>
-</li>
-<hr>
