@@ -11,25 +11,24 @@ $(document).ready(function() {
 
       if (name == "") {
         console.log("name is empty");
-        $('#name').next('.alert').removeClass('hide').hide().fadeIn("slow");
+        $('#name').next('.alert').removeClass('hide').hide().slideDown("slow");
       } else {
-        $('#name').next('.alert').fadeOut();
-
+        $('#name').next('.alert').slideUp();
       }
 
       if (email == "") {
         console.log("Email field is empty");
-        $('#email').next('.alert').removeClass('hide').hide().fadeIn("slow");
+        $('#email').next('.alert').removeClass('hide').hide().slideDown("slow");
       } else {
-        $('#email').next('.alert').fadeOut();
+        $('#email').next('.alert').slideUp();
       }
-      
+
       if (message == "") {
         console.log("message field is empty");
-        $('#message').next('.alert').removeClass('hide').hide().fadeIn("slow");
+        $('#message').next('.alert').removeClass('hide').hide().slideDown("slow");
       }
       else {
-        $('#message').next('.alert').fadeOut();
+        $('#message').next('.alert').slideUp();
       }
     });
   });
