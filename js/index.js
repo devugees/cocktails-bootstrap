@@ -4,7 +4,7 @@ $(document).ready(function() {
   $("#sliderContainer").load("slider.html");
   $("#featuresContainer").load("features.html");
   $("#popularContainer").load("popular.html");
-  $("#contactsContainer").load("contacts.html");
+  
 
   $(document).on('click', 'a.page-scroll', function(event) {
 
