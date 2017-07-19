@@ -86,33 +86,63 @@ $(document).ready(function() {
               var panals = resultELement.find('.collapse');
               $.each(links, function() {
                 var linkID = $(this).attr('href');
-                $(this).attr('href', linkID + i)
+                $(this).attr('href', linkID + i);
               });
               $.each(panals, function() {
-                var panalID = $(this).attr('id')
+                var panalID = $(this).attr('id');
                 $(this).attr('id', panalID + i);
-                $(this).removeClass('in')
+                $(this).removeClass('in');
               });
+          }
+
+          function addResult() {
+            resultELement.find('h3').text(result.name);
+            resultELement.find('.instructions').text(result.instructions);
+            resultELement.find('li').addClass('list-group-item');
+            $resultList.removeClass('hidden');
+            resultELement.fadeIn(1000).removeClass('hidden');
+            $resultList.append(resultELement);
+            if(i >= 4) {
+              resultELement.addClass('hidden');
+              resultELement.addClass('hiddenElement');
+            }
+            $('.buttonContainer').removeClass('hidden');
           }
           checkData();
           updatePanalLinks();
-          resultELement.find('h3').text(result.name);
-          resultELement.find('.instructions').text(result.instructions);
-          resultELement.find('li').addClass('list-group-item');
-          $resultList.removeClass('hidden');
-          resultELement.fadeIn(1000).removeClass('hidden');
-
-          $resultList.append(resultELement);
+          addResult();
         }
       });
   }
   $(document).on('click', "#searchButton", function(e) {
     e.preventDefault();
-    getData('http://www.thecocktaildb.com/api/json/v1/1/search.php', 4, true);
+    getData('http://www.thecocktaildb.com/api/json/v1/1/search.php', 12, true);
+
 
   });
   $(document).on('click', ".lucky", function(e) {
     e.preventDefault();
     getData('http://www.thecocktaildb.com/api/json/v1/1/random.php', 1, false);
+  });
+    var panalClosed = true;
+  $(document).on('click','#showMore',function(){
+    console.log("show more clicked");
+
+    if (panalClosed) {
+      panalClosed = false;
+      console.log("opening panal");
+      $('#resultList').find('.hiddenElement').slideDown().removeClass('hidden');
+      $('#showMore').removeClass('glyphicon-menu-down');
+      $('#showMore').addClass('glyphicon-menu-up');
+
+    }
+    else {
+      console.log("closing panal");
+      $('#resultList').find('.hiddenElement').slideUp().addClass('hidden');
+      $('#showMore').removeClass('glyphicon-menu-up');
+      $('#showMore').addClass('glyphicon-menu-down');
+      panalClosed = true;
+    }
+
   });
 });
