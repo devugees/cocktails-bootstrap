@@ -105,10 +105,12 @@
   float:right!important;
   }
 }
+
 .img-responsive {
-   box-shadow: 10px 10px 10px #888888;
+   box-shadow: 0 2px 5px #000;
    margin-bottom: 10px;
 }
+
 ul {
   font-size: 15px;
   font-family: 'Merriweather', serif;
