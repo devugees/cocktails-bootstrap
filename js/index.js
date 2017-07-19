@@ -27,7 +27,6 @@ $(document).ready(function() {
   }, 600);
   event.preventDefault();
 });
-
 });
   jQuery(document).ready(function() {
   jQuery(window).scroll(function() {
