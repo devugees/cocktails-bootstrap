@@ -18,7 +18,7 @@ $(document).ready(function() {
   $(function(){
     $("#contactsContainer").load("contacts.html");
   });
-
+  
   $(document).on('click','a.page-scroll', function(event) {
 
   var $ele = $(this);
