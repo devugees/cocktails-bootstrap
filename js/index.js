@@ -3,7 +3,6 @@ $(document).ready(function() {
   $("#navContainer").load("nav.html");
   $("#searchContainer").load("search.html");
   $("#sliderContainer").load("slider.html");
-  $("#featuresContainer").load("features.html");
   $("#popularContainer").load("popular.html");
   $("#contactsContainer").load("contacts.html");
 
