@@ -1,8 +1,6 @@
 $(document).ready(function() {
 
   $("#navContainer").load("nav.html");
-
-  $("#searchContainer").load("search.html");
   $("#sliderContainer").load("slider.html");
 
   $(document).on('click', 'a.page-scroll', function(event) {

@@ -1,25 +1,52 @@
 $(document).ready(function() {
-  function getData(url, count, search) {
-    if (search) {
-      $('#resultList').html("");
+
+  $("#searchContainer").load("search.html",function() {
+    var options = {
+      data: Cookies.getJSON('searchQuery'),
+      theme:'dark',
+    };
+    $('#searchBar').easyAutocomplete(options);
+
+    if(Cookies.get('searchQuery') == undefined) {
+      Cookies.set('searchQuery', []);
+    }
+    function updateCookie() {
+        var searchKey =  $('#searchBar').val();
+      //  var currentKeys =  Cookies.get('searchQuery');
+          var object =  Cookies.getJSON('searchQuery');
+
+          console.log(object.indexOf(searchKey));
+          if( object.indexOf(searchKey) == -1 && searchKey != "") {
+              object.push(searchKey);
+              console.log("found");
+          }
+
+          Cookies.set('searchQuery',object);
+          console.log(object);
+          return object;
     }
 
-    var keyword = $('.form-control').val();
-    var template;
-    var $resultList = $('#resultList');
-    $.ajax('/result.html', {
-      success: function(resultTemplate) {
-        template = resultTemplate;
-        return template;
+
+    function getData(url, count, search) {
+      if (search) {
+        $('#resultList').html("");
       }
-    });
-    $.getJSON(url, {
-        s: keyword
-      })
-      .done(function(response) {
-        console.log(response);
-        for (var i = 0; i < count; i++) {
-          var resultELement = $(template);
+      var keyword = $('#searchBar').val();
+      var template;
+      var $resultList = $('#resultList');
+      $.ajax('/result.html', {
+        success: function(resultTemplate) {
+          template = resultTemplate;
+          return template;
+        }
+      });
+      $.getJSON(url, {
+          s: keyword
+        })
+        .done(function(response) {
+          //console.log(response);
+          for (var i = 0; i < count; i++) {
+            var resultELement = $(template);
 
             var result = {
               name: response.drinks[i].strDrink,
@@ -62,7 +89,7 @@ $(document).ready(function() {
             };
 
 
-          function checkData() {
+            function checkData() {
               if (result.thumbnail != null) {
                 resultELement.find('img').attr('src', result.thumbnail);
               } else {
@@ -80,39 +107,71 @@ $(document).ready(function() {
                   resultELement.find('#ingredients').append($ings);
                 }
               });
-          }
-          function updatePanalLinks() {
+            }
+
+            function updatePanalLinks() {
               var links = resultELement.find('a');
               var panals = resultELement.find('.collapse');
               $.each(links, function() {
                 var linkID = $(this).attr('href');
-                $(this).attr('href', linkID + i)
+                $(this).attr('href', linkID + i);
               });
               $.each(panals, function() {
-                var panalID = $(this).attr('id')
+                var panalID = $(this).attr('id');
                 $(this).attr('id', panalID + i);
-                $(this).removeClass('in')
+                $(this).removeClass('in');
               });
+            }
+
+            function addResult() {
+              resultELement.find('h3').text(result.name);
+              resultELement.find('.instructions').text(result.instructions);
+              resultELement.find('li').addClass('list-group-item');
+              $resultList.removeClass('hidden');
+              resultELement.fadeIn(1000).removeClass('hidden');
+              $resultList.append(resultELement);
+              if (i >= 4) {
+                resultELement.addClass('hidden');
+                resultELement.addClass('hiddenElement');
+              }
+              $('.buttonContainer').removeClass('hidden');
+            }
+
+            checkData();
+            updatePanalLinks();
+            addResult();
           }
-          checkData();
-          updatePanalLinks();
-          resultELement.find('h3').text(result.name);
-          resultELement.find('.instructions').text(result.instructions);
-          resultELement.find('li').addClass('list-group-item');
-          $resultList.removeClass('hidden');
-          resultELement.fadeIn(1000).removeClass('hidden');
+        });
+    }
+    $(document).on('click','#searchButton' , function(e) {
+      e.preventDefault();
+      getData('http://www.thecocktaildb.com/api/json/v1/1/search.php', 12, true);
+      updateCookie();
 
-          $resultList.append(resultELement);
-        }
-      });
-  }
-  $(document).on('click', "#searchButton", function(e) {
-    e.preventDefault();
-    getData('http://www.thecocktaildb.com/api/json/v1/1/search.php', 4, true);
 
+    });
+
+    $(document).on('click', ".lucky", function(e) {
+      e.preventDefault();
+      getData('http://www.thecocktaildb.com/api/json/v1/1/random.php', 1, false);
+    });
+    var panalClosed = true;
+    $(document).on('click', '#showMore', function() {
+      if (panalClosed) {
+        panalClosed = false;
+        //console.log("opening panal");
+        $('#resultList').find('.hiddenElement').slideDown().removeClass('hidden');
+        $('#showMore').removeClass('glyphicon-menu-down');
+        $('#showMore').addClass('glyphicon-menu-up');
+
+      } else {
+        $('#resultList').find('.hiddenElement').slideUp().addClass('hidden');
+        $('#showMore').removeClass('glyphicon-menu-up');
+        $('#showMore').addClass('glyphicon-menu-down');
+        panalClosed = true;
+      }
+
+    });
   });
-  $(document).on('click', ".lucky", function(e) {
-    e.preventDefault();
-    getData('http://www.thecocktaildb.com/api/json/v1/1/random.php', 1, false);
-  });
+
 });
