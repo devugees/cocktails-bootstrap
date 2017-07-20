@@ -34,7 +34,7 @@ $(document).ready(function() {
       var keyword = $('#searchBar').val();
       var template;
       var $resultList = $('#resultList');
-      $.ajax('/result.html', {
+      $.ajax('result.html', {
         success: function(resultTemplate) {
           template = resultTemplate;
           return template;
