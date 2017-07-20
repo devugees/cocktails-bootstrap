@@ -10,7 +10,7 @@ $(document).ready(function() {
         return template;
       }
     });
-    $.getJSON('http://www.thecocktaildb.com/api/json/v1/1/random.php',)
+    $.getJSON('http://www.thecocktaildb.com/api/json/v1/1/random.php')
       .done(function(response) {
         console.log(response);
         for (var i = 0; i < 7; i++) {
