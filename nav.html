@@ -1,32 +1,29 @@
-<nav class="navbar navbar-inverse" role="navigation">
-  <div class="container">
-    <a href="index.html" class="navbar-left"><img src="images/cocktail_icon.png" style="width:46px; height:46px;filter: invert(100%);float:left
+<nav class="navbar navbar-toggleable-md navbar-light bg-inverse  z-index10 h-100" role="navigation">
+  <div class="">
+    <a class="nav-link page-scroll" href="#sliderContainer" class="navbar-left"><img src="images/cocktail_icon.png" style="width:46px; height:46px;filter: invert(100%);float:left
       "></a>
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="index.html">C O C K T A I L S</a>
+      <a class="navbar-brand page-scroll" href="#sliderContainer">C O C K T A I L S</a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
+    <div class="flex-column collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="navbar-nav flex-column">
 
-        <li>
-          <a href="#popularContainer" class="page-scroll">Popular</a>
+        <li class="nav-item">
+          <a class="nav-link page-scroll" href="#popularContainer" class="page-scroll">Popular</a>
         </li>
 
-        <li>
-          <a href="#contactsContainer" class="page-scroll">Contacts</a>
+        <li class="nav-item">
+          <a class="nav-link page-scroll" href="#contactsContainer" class="page-scroll">Contacts</a>
         </li>
       </ul>
-      <ul class="nav navbar-nav pull-left pull-right-md">
-        <li>
-          <a href="#" class="btn  btn-md" role="button" data-toggle="modal" data-target="#login-modal"><span class="glyphicon glyphicon-user"></span> Log In</a>
+      <ul class="navbar-nav pull-left pull-right-md flex-column">
+        <li class="nav-item">
+          <a class="nav-link" href="#" class="btn  btn-md" role="button" data-toggle="modal" data-target="#login-modal"><span class="glyphicon glyphicon-user"></span> Log In</a>
         </li>
       </ul>
     </div>

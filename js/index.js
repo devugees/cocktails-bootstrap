@@ -11,14 +11,14 @@ $(document).ready(function() {
     event.preventDefault();
   });
 });
-jQuery(document).ready(function() {
-  jQuery(window).scroll(function() {
-    var navbar = jQuery("#navContainer").offset().top;
-    var scrollpos = jQuery(window).scrollTop();
-    if (scrollpos >= navbar) {
-      jQuery("nav").addClass("navbar-fixed-top");
-    } else {
-      jQuery("nav").removeClass("navbar-fixed-top");
-    }
-  });
-});
+//jQuery(document).ready(function() {
+  //jQuery(window).scroll(function() {
+    //var navbar = jQuery("#navContainer").offset().top;
+    //var scrollpos = jQuery(window).scrollTop();
+    //if (scrollpos >= navbar) {
+      //jQuery("nav").addClass("navbar-fixed-top");
+    //} else {
+      //jQuery("nav").removeClass("navbar-fixed-top");
+    //}
+  //});
+//});
