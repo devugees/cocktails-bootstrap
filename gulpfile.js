@@ -1,6 +1,7 @@
 var gulp        = require('gulp');
 var browserSync = require('browser-sync').create();
 var sass        = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
 
 // Static Server + watching sass/html files
 gulp.task('serve', ['sass'], function() {
@@ -16,7 +17,9 @@ gulp.task('serve', ['sass'], function() {
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', function() {
     return gulp.src("css/*.sass")
+        .pipe(sourcemaps.init())
         .pipe(sass())
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest("css"))
         .pipe(browserSync.stream());
 });
