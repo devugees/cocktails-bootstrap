@@ -2,8 +2,8 @@ $(document).ready(function() {
 
   $("#searchContainer").load("search.html",function() {
     var options = {
-      data: Cookies.getJSON('searchQuery'),
-      theme:'dark',
+      data: Cookies.getJSON('searchQuery')
+
     };
     $('#searchBar').easyAutocomplete(options);
 
@@ -130,7 +130,7 @@ $(document).ready(function() {
               $resultList.removeClass('hidden');
               resultELement.fadeIn(1000).removeClass('hidden');
               $resultList.append(resultELement);
-              if (i >= 4) {
+              if (i >= 6) {
                 resultELement.addClass('hidden');
                 resultELement.addClass('hiddenElement');
               }
@@ -151,26 +151,25 @@ $(document).ready(function() {
 
     });
 
-    $(document).on('click', ".lucky", function(e) {
+  /* $(document).on('click', ".lucky", function(e) {
       e.preventDefault();
       getData('https://www.thecocktaildb.com/api/json/v1/1/random.php', 1, false);
-    });
+    });*/ 
     var panalClosed = true;
     $(document).on('click', '#showMore', function() {
       if (panalClosed) {
-        panalClosed = false;
-        //console.log("opening panal");
         $('#resultList').find('.hiddenElement').slideDown().removeClass('hidden');
         $('#showMore').removeClass('glyphicon-menu-down');
         $('#showMore').addClass('glyphicon-menu-up');
-
+        $(this).text('Show Less');
+        panalClosed = false;
       } else {
         $('#resultList').find('.hiddenElement').slideUp().addClass('hidden');
         $('#showMore').removeClass('glyphicon-menu-up');
         $('#showMore').addClass('glyphicon-menu-down');
+        $(this).text('Show More');
         panalClosed = true;
       }
-
     });
   });
 
