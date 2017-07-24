@@ -1,3 +1,30 @@
+h1, .h1 {
+  font-size: 1.375em; }
+  @media (min-width: 576px) {
+    h1, .h1 {
+      font-size: 2.0625em; } }
+  @media (min-width: 768px) {
+    h1, .h1 {
+      font-size: 2.75em; } }
+
+h2, .h2 {
+  font-size: 1em; }
+  @media (min-width: 576px) {
+    h2, .h2 {
+      font-size: 1.5em; } }
+  @media (min-width: 768px) {
+    h2, .h2 {
+      font-size: 2em; } }
+
+h3, .h3 {
+  font-size: 0.75em; }
+  @media (min-width: 576px) {
+    h3, .h3 {
+      font-size: 1.125em; } }
+  @media (min-width: 768px) {
+    h3, .h3 {
+      font-size: 1.5em; } }
+
 .carousel-inner img {
   object-fit: fill; }
 
