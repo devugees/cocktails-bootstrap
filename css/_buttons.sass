@@ -1,0 +1,16 @@
+=btn-color($color-pri, $color-sec, $color-border)
+  background-color: $color-pri
+  color: $color-sec
+  border-color: $color-border
+  &:hover,
+  &:focus
+    background-color: darken($color-pri, 10%)
+    color: $color-sec
+    border-color: darken($color-border, 10%)
+
+
+.btn-primary
+  @include btn-color($black-background, $whit-transparent, $whit-transparent )
+
+  border-radius: 2em
+  padding: 10px 35px

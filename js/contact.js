@@ -2,7 +2,7 @@ $(document).ready(function() {
 
   $("#contactsContainer").load("contacts.html", function() {
 
-    $('#name').val(Cookies.get('name'));
+   $('#name').val(Cookies.get('name'));
     $('#email').val(Cookies.get('email'));
     $('#message').val(Cookies.get('message'));
 
