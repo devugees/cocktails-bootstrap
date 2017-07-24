@@ -1,7 +1,7 @@
-<nav class="navbar navbar-toggleable-md navbar-light bg-inverse  z-index10 h-100" role="navigation">
-  <div class="">
-    <a class="nav-link page-scroll" href="#sliderContainer" class="navbar-left"><img src="images/cocktail_icon.png" style="width:46px; height:46px;filter: invert(100%);float:left
-      "></a>
+<nav class="navbar navbar-toggleable-md navbar-inverse  bg-inverse  z-index10 h-100" role="navigation">
+  <div class=" ">
+    <a class="nav-link page-scroll logo" href="#sliderContainer" class="navbar-left"><img src="images/cocktail_icon.png" style="width:128px; height:128px;filter: invert(100%);
+      " class="img-center clearfix"></a>
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,10 +20,34 @@
         <li class="nav-item">
           <a class="nav-link page-scroll" href="#contactsContainer" class="page-scroll">Contacts</a>
         </li>
+
       </ul>
       <ul class="navbar-nav pull-left pull-right-md flex-column">
         <li class="nav-item">
           <a class="nav-link" href="#" class="btn  btn-md" role="button" data-toggle="modal" data-target="#login-modal"><span class="glyphicon glyphicon-user"></span> Log In</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav pull-left pull-right-md flex-column">
+        <li class="nav-item">
+          <div class="row search">
+            <form action="" id="searchForm" autocomplete="off">
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for Cocktail Here ...." id="searchBar">
+
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary"  type="submit" id="searchButton" href="#resultList">Go!</button>
+                  </span>
+                </div>
+              </div>
+            </form>
+          </div>
         </li>
       </ul>
     </div>
