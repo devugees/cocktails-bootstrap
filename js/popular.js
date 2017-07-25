@@ -29,8 +29,25 @@ $(document).ready(function() {
         });
       }
     });
+  });
 
+
+  jQuery(window).scroll(function() {
+    var scrollpos = jQuery(window).scrollTop();
+    var screenHeigth = (screen.height)/2;
+      console.log(screenHeigth);
+
+    $('.inactive').each(function() {
+      var positionImg = $(this).offset().top;
+
+      if ((scrollpos + screenHeigth) >= positionImg) {
+        $(this).removeClass("inactive");
+      }
+    });
 
   });
+
+
+
 
 });
