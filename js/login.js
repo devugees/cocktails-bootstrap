@@ -1,20 +1,19 @@
 // declaring the Cookies intit function
 function initi_cookies() {
-  Cookies.set('UserNameCookie', $('#register_username').val());
-  Cookies.set('EmailCookie', $('#register_email').val());
+  Cookies.set('UserNameCookie', $('#register_modal_username').val());
+  Cookies.set('EmailCookie',    $('#register_email').val());
   Cookies.set('PasswordCookie', $('#register_password').val());
 }
 
 function nav_switch() {
   if (Cookies.get('loggedIn') === 'true') {
-    $('#navContainer').empty();
-    $("#navContainer").load('navLogged.html', function() {
-      $('#btn_logOut').on('click', logOut_fun);
-      $('#welcome_msg').text(' Welcome '+Cookies.get('UserNameCookie'));
-    });
+  $('#btn-nav-login').addClass('hidden');
+  $('#btn-nav-logout').removeClass('hidden');
+  $('#welcome_msg_anchor').append('<li id="welcome_msg_presentStatus" class="nav-item"><a class="nav-link">'+"Welcome "+ Cookies.get("UserNameCookie") + '</a></li>');
   } else {
-    $('#navContainer').empty();
-    $("#navContainer").load("nav.html");
+    $('#btn-nav-logout').addClass('hidden');
+    $('#btn-nav-login').removeClass('hidden');
+    $('#welcome_msg_presentStatus').remove();
   }
 }
 
@@ -43,7 +42,7 @@ function checkLogin() {
 }
 
 function logOut_fun() {
-  console.log('bite me');
+  console.log('loged out function triggerd');
   Cookies.set('loggedIn', false);
   nav_switch();
 }
@@ -93,9 +92,13 @@ $(document).ready(function() {
 
   // calling the cookies init function
   $('#btn-register').on('click', initi_cookies);
+  $(document).on('click','#btn-nav-logout',function(){
+    console.log('btn log out clicked');
+    logOut_fun();
+  });
   //clicking on login function
   $('button').click('#btn-login', function(e) {
-    console.log('clicked');
+    console.log('btn login clicked');
     e.preventDefault();
     checkLogin();
   });

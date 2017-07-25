@@ -7,7 +7,7 @@ $(document).ready(function() {
       $('.rating-tooltip').eq(i).rating('rate', Cookies.get('rating' + i));
     });
 
-    $('#popularContainer').on('click', "a", function() {
+    $('#popularContainer').on('click', "section", function() {
       var titel_cocktail = $(this).find('h3').text();
       $('#searchBar').val(titel_cocktail);
     });
