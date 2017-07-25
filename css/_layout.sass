@@ -1,6 +1,6 @@
 .modal-content
   border-radius: 0
-  
+
 .carousel-inner img
   object-fit: fill
 
@@ -8,7 +8,10 @@
   object-fit: cover
   object-position: right
 .main
-  margin-left: 14em
+  overflow: scroll
+  position: relative
+  margin-left: 0
+  transition: margin-left 1s ease
 
 #navContainer
   width: 14em
@@ -86,3 +89,23 @@
 
 ul
   font-size: 15px
+
+
+#nav-toggle
+  border: solid 2px white
+  border-radius: 4px
+  background-color: rgba(255,255,255,0)
+  padding: 5px 5px 5px 5px
+  display: inline
+.nav-toggle
+  margin-left: 25px
+  margin-top: 25px
+  z-index: 9999
+  position: fixed
+
+
+.nav-link
+  transition: border-bottom 1s ease
+
+.active
+  box-shadow: 0 2px 0 white
